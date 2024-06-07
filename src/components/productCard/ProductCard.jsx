@@ -1,5 +1,8 @@
+import { NavLink } from 'react-router-dom';
 function ProductCard({ product }) {
-    const { title, description, thumbnail, price } = product;
+    const {id, title, description, thumbnail, price } = product;
+   
+
 
     return (
         <div className="card">
@@ -15,7 +18,7 @@ function ProductCard({ product }) {
                 <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-3">{description}</p>
                 <div className="flex justify-between items-center mb-4">
                     <span className="text-xl font-bold">${price}</span>
-                    {/* <Button>Add to Cart</Button> */}
+                    <NavLink to={`/product/${id}`} className="btn">Add to Cart</NavLink>
                 </div>
             </div>
         </div>

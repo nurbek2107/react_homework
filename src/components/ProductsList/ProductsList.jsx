@@ -9,7 +9,7 @@ function ProductsList({ products }) {
         <div className='flex flex-wrap justify-center gap-10'>
             {products.map((product) => {
                 
-               return <ProductCard product={product} />
+               return <ProductCard id={product.id} product={product} />
 })}
         </div>
     );
