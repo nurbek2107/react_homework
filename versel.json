@@ -1,0 +1,5 @@
+{
+    "rewritest":[
+        {"soure":"/(.*)","destination":"/"}
+    ]
+}
