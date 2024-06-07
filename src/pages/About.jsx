@@ -1,6 +1,6 @@
 function about() {
   return (
-    <div>about</div>
+    <div>aboutucvbn</div>
   )
 }
 
