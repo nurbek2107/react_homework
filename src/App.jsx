@@ -28,6 +28,7 @@ function App() {
           path: "/product/:id",
           element: <Product />
         }
+        
       ]
     }
   ]);

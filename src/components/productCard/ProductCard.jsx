@@ -5,10 +5,10 @@ function ProductCard({ product }) {
 
 
     return (
-        <div className="card">
-            <div className="border border-zinc-200 dark:border-zinc-800 rounded-lg p-4 max-w-sm mx-auto ">
+        <div className="card ">
+            <div className="shadow-2xl rounded-lg p-4 max-w-sm mx-auto ">
                 <img
-                    src={thumbnail} // Remove curly braces around thumbnail
+                    src={thumbnail} 
                     alt="Product Image"
                     width={240}
                     height={240}
@@ -18,7 +18,7 @@ function ProductCard({ product }) {
                 <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-3">{description}</p>
                 <div className="flex justify-between items-center mb-4">
                     <span className="text-xl font-bold">${price}</span>
-                    <NavLink to={`/product/${id}`} className="btn">Add to Cart</NavLink>
+                    <NavLink to={`/product/${id}`} className="btn ">Add to Cart</NavLink>
                 </div>
             </div>
         </div>
