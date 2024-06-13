@@ -1,18 +1,13 @@
-// import { useLogin } from "../hooks/useLogin"
+// hooks
+import useLogin from "../hooks/useLogin"
 
-// function Register() {
-//     return(
-//         <div className="register">
-//             <h1>Register</h1>
-//             <form>  
-//                 <label>Username:</label>
-//                 <input type="text" id="username" name="username" />
-//                 <br />
-//                 <label>Password:</label>
-//                 <input type="password" id="password" name="password" />
-//             </form>
-//         </div>
+function Login() {
+    let { signInWithGoogle } = useLogin()
+    return (
+        <div >
+            <button onClick={signInWithGoogle} className="btn btn-primary">Google</button>
+        </div>
+    )
+}
 
-//     )
-// }
-// export default Register
+export default Login

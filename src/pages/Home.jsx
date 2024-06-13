@@ -16,7 +16,7 @@ function Home() {
           </circle>
         </g>
       </svg></div>}
-      {error && <div>{error}</div>}
+      {error && <div>{error}fd</div>}
       {data && <ProductsList products={data.products} />}
       
     </div>

@@ -5,8 +5,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Product from "./pages/Product";
-// import Login from "./pages/Login"; 
-// import Register from "./pages/Register"; 
+// import Login from "./pages/Login"; // Assuming these are the correct paths
+// import Register from "./pages/Register"; // Assuming these are the correct paths
 
 function App() {
   // const isAuthenticated = false; // Replace with actual authentication logic
@@ -32,14 +32,14 @@ function App() {
           path: "product/:id",
           element: <Product />
         },
-          // {
-          //   path: "login",
-          //   element: isAuthenticated ? <Navigate to="/" /> : <Login />
-          // },
-          // {
-          //   path: "register",
-          //   element: isAuthenticated ? <Navigate to="/" /> : <Register />
-          // }
+        // {
+        //   path: "login",
+        //   element: isAuthenticated ? <Navigate to="/" /> : <Login />
+        // },
+        // {
+        //   path: "register",
+        //   element: isAuthenticated ? <Navigate to="/" /> : <Register />
+        // }
       ]
     }
   ]);

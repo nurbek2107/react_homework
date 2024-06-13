@@ -1,9 +1,35 @@
-// import { createContext } from "react";
+import { createContext, useReducer, useState } from "react";
 
-// const GlobalContext = createContext()
+export let GlobalContext = createContext();
 
-// function GlobalContextProvider () {
+function GlobalContextProvider({ children }) {
 
-// }
+    let changeState = (state, action) => {
+        let { type, payload } = action
 
-// export default GlobalContextProvider
+        switch (type) {
+            case `LOG_IN`:
+                return { ...state, user: payload }
+            case `LOG_OUT`:
+                return { ...state, user: null }
+            default:
+                return state;
+        }
+    }
+
+    let [state, dispatch] = useReducer(changeState, {
+        user: null,
+        products: [],
+        total: 0,
+    })
+
+    let [changeTotal, setChangeTotal] = useState(state.total);
+
+    return (
+        <GlobalContext.Provider value={{ ...state, changeTotal, setChangeTotal, dispatch }}>
+            {children}
+        </GlobalContext.Provider>
+    )
+}
+
+export default GlobalContextProvider
