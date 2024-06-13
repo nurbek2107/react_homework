@@ -10,7 +10,7 @@ function ProductsList({ products }) {
             {products.map((product) => (
                 <div key={product.id} className='product-container'>
                     <ProductCard id={product.id} product={product} />
-                    <h2 className="text-xl font-semibold mt-4">{product.title}</h2>
+                    
                 </div>
             ))}
         </div>

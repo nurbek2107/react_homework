@@ -44,7 +44,6 @@ function Header() {
           </ul>
         </div>
         <div className="right">
-          
           <label className="swap swap-rotate">
             <input
               onClick={handleTheme}
