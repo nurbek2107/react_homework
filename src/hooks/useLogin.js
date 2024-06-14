@@ -1,20 +1,25 @@
-// import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-// import { auth } from "../firebase/firebaseConfig"; // Ensure the correct import path
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../firebase/firebaseConfig";
+import { useGlobalContext } from "./useGlobalContext";
 
-// function useLogin() {
-//     const handleLogin = async () => {
-//         const provider = new GoogleAuthProvider();
-//         try {
-//             const result = await signInWithPopup(auth, provider);
-//             const user = result.user;
-//             console.log("User signed in: ", user); // Log user information
-//         } catch (err) {
-//             const errorMessage = err.message; // Corrected 'error' to 'err'
-//             alert('Error: ' + errorMessage);
-//         }
-//     };
+function useLogin() {
+    const { dispatch } = useGlobalContext();
 
-//     return { handleLogin }; 
-// }
+    const signInWithGoogle = async () => {
+        const provider = new GoogleAuthProvider();
 
-// export { useLogin };
+        try {
+            const result = await signInWithPopup(auth, provider);
+            const user = result.user;
+            dispatch({ type: 'LOG_IN', payload: user });
+            console.log(user);
+        } catch (error) {
+            const errorMessage = error.message;
+            alert(`Error: ${errorMessage}`);
+        }
+    };
+
+    return { signInWithGoogle };
+}
+
+export default useLogin;

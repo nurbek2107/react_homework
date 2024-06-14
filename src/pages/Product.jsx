@@ -35,7 +35,7 @@ function Product() {
             if (number > 0) {
                 mainElementRef.current.textContent = number -= 1
             }
-        }
+        } 
     }
 
     let varToral;
